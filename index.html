@@ -7,8 +7,8 @@
 <style>
 /* Layout: Varo-style poster bands rebuilt as Fundo's "co-op passbook": solid color bands, compressed display type, real member photography in thin ink frames, clay product objects, passbook stamps and receipt tape as the signature motion. Single deliberate light look in Prototype A's palette. */
 :root{
-  --salmon:#FF8A6B; --coral:#C2452A; --blush:#FFE2D6; --cream:#FFF6F1; --ink:#26191C; --sun:#FFD66B;
-  --paper:#FFFFFF; --muted:#6F5A57; --soft:#F3E3DB;
+  --salmon:#CDEB5B; --coral:#4C6A0C; --blush:#EAF5C8; --cream:#F7FAEE; --ink:#191C15; --sun:#FFD66B;
+  --paper:#FFFFFF; --muted:#5A6352; --soft:#E2E9D0;
   --display:'Bricolage Grotesque','Arial Narrow',system-ui,sans-serif;
   --body:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;
   color-scheme:light;
@@ -37,7 +37,7 @@ sup.fn a{text-decoration:none}
 .btn:hover{transform:translateY(-3px)}
 .btn:active{transform:translateY(0)}
 .btn.p{background:var(--coral);border-color:var(--ink);color:#fff}
-.btn.p:hover{background:#A93A22}
+.btn.p:hover{background:#3C5509}
 .btn.d{background:var(--ink);color:var(--cream)}
 .btn.o{background:transparent}
 .btn.o:hover{background:var(--ink);color:var(--cream)}
@@ -57,17 +57,17 @@ sup.fn a{text-decoration:none}
 
 /* 3D phone showing the real app screen */
 .ph3d-wrap{font-size:16px;perspective:1600px;position:relative}
-.ph3d-wrap::after{content:"";position:absolute;left:12%;right:2%;bottom:-2.2em;height:2em;background:radial-gradient(closest-side,rgba(38,25,28,.38),rgba(38,25,28,0));filter:blur(4px);z-index:-1}
-.ph3d{position:relative;width:15em;height:31.4em;border-radius:2.9em;padding:.42em;background:linear-gradient(140deg,#6b5558 0%,#2a1c1f 22%,#130b0d 50%,#3b2a2d 78%,#7a6366 100%);transform:rotateY(-22deg) rotateX(8deg) rotateZ(3deg);transform-style:preserve-3d;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18),.06em .06em 0 #4d3a3d,.12em .12em 0 #3f2e31,.18em .18em 0 #352629,.24em .24em 0 #2c1f22,.3em .3em 0 #24181b,.36em .36em 0 #1d1316,.42em .42em 0 #170f11;animation:sway 10s ease-in-out infinite}
-.ph3d.alt{transform:rotateY(20deg) rotateX(6deg) rotateZ(-3deg);animation-name:sway2;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18),-.06em .06em 0 #4d3a3d,-.12em .12em 0 #3f2e31,-.18em .18em 0 #352629,-.24em .24em 0 #2c1f22,-.3em .3em 0 #24181b,-.36em .36em 0 #1d1316,-.42em .42em 0 #170f11}
-.ph3d::before,.ph3d::after{content:"";position:absolute;width:.22em;border-radius:.2em;background:linear-gradient(#5a4649,#1a1012)}
-.ph3d::before{left:-.2em;top:6.5em;height:2.4em;box-shadow:0 3.2em 0 #2a1c1f}
+.ph3d-wrap::after{content:"";position:absolute;left:12%;right:2%;bottom:-2.2em;height:2em;background:radial-gradient(closest-side,rgba(25,28,21,.38),rgba(25,28,21,0));filter:blur(4px);z-index:-1}
+.ph3d{position:relative;width:15em;height:31.4em;border-radius:2.9em;padding:.42em;background:linear-gradient(140deg,#5D6458 0%,#1F231C 22%,#0F110D 50%,#2E3229 78%,#6B7266 100%);transform:rotateY(-22deg) rotateX(8deg) rotateZ(3deg);transform-style:preserve-3d;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18),.06em .06em 0 #3D4338,.12em .12em 0 #323730,.18em .18em 0 #2A2E27,.24em .24em 0 #232720,.3em .3em 0 #1D201A,.36em .36em 0 #171A14,.42em .42em 0 #121410;animation:sway 10s ease-in-out infinite}
+.ph3d.alt{transform:rotateY(20deg) rotateX(6deg) rotateZ(-3deg);animation-name:sway2;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18),-.06em .06em 0 #3D4338,-.12em .12em 0 #323730,-.18em .18em 0 #2A2E27,-.24em .24em 0 #232720,-.3em .3em 0 #1D201A,-.36em .36em 0 #171A14,-.42em .42em 0 #121410}
+.ph3d::before,.ph3d::after{content:"";position:absolute;width:.22em;border-radius:.2em;background:linear-gradient(#4E5449,#141611)}
+.ph3d::before{left:-.2em;top:6.5em;height:2.4em;box-shadow:0 3.2em 0 #1F231C}
 .ph3d::after{right:-.2em;top:8.5em;height:4em}
 @keyframes sway{0%,100%{transform:rotateY(-22deg) rotateX(8deg) rotateZ(3deg)}50%{transform:rotateY(-14deg) rotateX(5deg) rotateZ(2deg) translateY(-.5em)}}
 @keyframes sway2{0%,100%{transform:rotateY(20deg) rotateX(6deg) rotateZ(-3deg)}50%{transform:rotateY(12deg) rotateX(4deg) rotateZ(-2deg) translateY(-.5em)}}
-.ph3d-scr{position:relative;width:100%;height:100%;border-radius:2.5em;background:var(--cream);overflow:hidden;padding:.85em .85em;font:500 .62em/1.3 var(--body);color:var(--ink);box-shadow:0 0 0 .3em #0b0607}
+.ph3d-scr{position:relative;width:100%;height:100%;border-radius:2.5em;background:var(--cream);overflow:hidden;padding:.85em .85em;font:500 .62em/1.3 var(--body);color:var(--ink);box-shadow:0 0 0 .3em #0A0B09}
 .ph3d-scr::after{content:"";position:absolute;inset:0;background:linear-gradient(118deg,rgba(255,255,255,.42) 0%,rgba(255,255,255,.08) 30%,rgba(255,255,255,0) 31%,rgba(255,255,255,0) 100%);pointer-events:none}
-.ps-island{position:absolute;left:50%;top:.75em;width:7.5em;height:2.1em;margin-left:-3.75em;border-radius:1.2em;background:#0b0607;z-index:2}
+.ps-island{position:absolute;left:50%;top:.75em;width:7.5em;height:2.1em;margin-left:-3.75em;border-radius:1.2em;background:#0A0B09;z-index:2}
 .ps-bar{display:flex;justify-content:space-between;font-size:.95em;padding:.1em .9em 1.1em}
 .ps-top{display:flex;justify-content:space-between;align-items:center}
 .ps-bell{width:2.6em;height:2.6em;border-radius:.9em;background:#fff;border:1px solid var(--soft);display:grid;place-items:center}
@@ -151,7 +151,7 @@ sup.fn a{text-decoration:none}
 @keyframes rise{from{transform:translateY(32%);opacity:0}to{transform:none;opacity:1}}
 .cap{display:flex;gap:8px;max-width:480px;width:100%;flex-wrap:wrap}
 .cap input{flex:1 1 220px;min-width:0;height:52px;border:1.5px solid var(--ink);border-radius:4px;background:var(--cream);padding:0 16px;font-size:16px}
-.cap input::placeholder{color:#7D6863}
+.cap input::placeholder{color:#6C7562}
 .cap-note{font-size:13px;margin:-14px 0 0;opacity:.85}
 @media (max-width:520px){.hero .cap .btn{width:100%}}
 .cap-ok{display:none;padding:12px 14px;background:var(--cream);border:1.5px solid var(--ink);border-radius:4px;font-weight:700;font-size:15px;max-width:480px;color:var(--ink)}
@@ -226,7 +226,7 @@ sup.fn a{text-decoration:none}
 .split .frame.tall{aspect-ratio:4/5;max-width:470px;margin-inline:auto}
 .ticks{list-style:none;margin:2px 0 0;padding:0;display:grid;gap:10px}
 .ticks li{display:flex;gap:12px;align-items:flex-start;font-weight:600}
-.ticks li::before{content:"";flex-shrink:0;width:18px;height:18px;margin-top:4px;border-radius:3px;background:var(--ink) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FF8A6B' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/13px no-repeat}
+.ticks li::before{content:"";flex-shrink:0;width:18px;height:18px;margin-top:4px;border-radius:3px;background:var(--ink) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23CDEB5B' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/13px no-repeat}
 .b-sun{background:var(--sun)}.b-cream{background:var(--cream)}.b-blush{background:var(--blush)}.b-ink{background:var(--ink);color:var(--cream)}.b-white{background:var(--paper)}.b-salmon{background:var(--salmon)}
 .methods{display:flex;gap:8px;flex-wrap:wrap}
 .methods span{border:1.5px solid var(--ink);border-radius:4px;padding:8px 14px;font-weight:800;font-size:14px;background:var(--blush)}
@@ -364,9 +364,9 @@ sup.fn a{text-decoration:none}
 .fcols h4{margin:0 0 12px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--salmon)}
 .fcols a{display:block;text-decoration:none;padding:5px 0;font-size:15px;opacity:.9}
 .fcols a:hover{opacity:1;text-decoration:underline}
-.apps{grid-column:1/-1;display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding-top:22px;border-top:1px solid #4A3A37;font-weight:700}
+.apps{grid-column:1/-1;display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding-top:22px;border-top:1px solid #3C4436;font-weight:700}
 .apps .badge{border:1.5px solid var(--cream);border-radius:4px;padding:8px 14px;font-size:14px}
-.fnotes{margin-top:44px;padding-top:24px;border-top:1px solid #4A3A37;font-size:13px;line-height:1.55;color:#CDBDB8;display:grid;gap:8px}
+.fnotes{margin-top:44px;padding-top:24px;border-top:1px solid #3C4436;font-size:13px;line-height:1.55;color:#BCC4B0;display:grid;gap:8px}
 .fnotes p{margin:0;max-width:80em}
 @media (max-width:760px){.fcols{grid-template-columns:1fr 1fr}.fcols>div:first-child{grid-column:1/-1}}
 
@@ -539,7 +539,7 @@ sup.fn a{text-decoration:none}
     <div class="copy">
       <span class="kick" style="color:var(--salmon)">Early repayment</span>
       <h2 class="mega h2" id="e-h">Good week at the stall? Pay ahead.</h2>
-      <p class="lede" style="color:#E9DCD7">Slide to any amount. Fundo shows your new balance and how many payments are left before you send a peso.</p>
+      <p class="lede" style="color:#DCE3D2">Slide to any amount. Fundo shows your new balance and how many payments are left before you send a peso.</p>
 
       <div class="calc" role="group" aria-label="Early repayment estimate">
         <div class="top"><label for="eslide">Pay early</label><span style="font-size:13.5px;color:var(--muted)">Salary Loan · ₱38,500 left</span></div>
@@ -644,7 +644,7 @@ sup.fn a{text-decoration:none}
 <footer class="foot band">
   <div class="wrap">
     <div class="fcols">
-      <div><a class="brand" href="#top" style="padding:0;opacity:1"><span class="logo" data-size="40" data-v="dark"></span><b style="color:var(--cream)">fundo</b></a><p style="margin:14px 0 0;font-size:15px;color:#CDBDB8;max-width:22em">Co-op records, in your hands. Built for members of Philippine cooperatives.</p></div>
+      <div><a class="brand" href="#top" style="padding:0;opacity:1"><span class="logo" data-size="40" data-v="dark"></span><b style="color:var(--cream)">fundo</b></a><p style="margin:14px 0 0;font-size:15px;color:#BCC4B0;max-width:22em">Co-op records, in your hands. Built for members of Philippine cooperatives.</p></div>
       <div><h4>App</h4><a href="#records">Records</a><a href="#pay">Payments</a><a href="#reminders">Reminders</a><a href="#early">Early repayment</a><a href="#offers">Loan products</a></div>
       <div><h4>More</h4><a href="#how">How it works</a><a href="#coops">For cooperatives</a><a href="#members">Who it's for</a><a href="#faq">FAQ</a><a href="#join">Early access</a></div>
       <div class="apps"><span>Coming to Android and iPhone</span><span class="badge">Google Play · soon</span><span class="badge">App Store · soon</span></div>
@@ -665,7 +665,7 @@ sup.fn a{text-decoration:none}
 var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
 /* Fundo mark: an F built from three rounded bars, with a coin */
 function logo(size,bg,fg,coin){return '<svg width="'+size+'" height="'+size+'" viewBox="0 0 64 64" role="img" aria-label="Fundo logo" style="display:block"><rect width="64" height="64" rx="19" fill="'+bg+'"/><rect x="19" y="15" width="11" height="36" rx="5.5" fill="'+fg+'"/><rect x="19" y="15" width="28" height="11" rx="5.5" fill="'+fg+'"/><rect x="19" y="31" width="19" height="11" rx="5.5" fill="'+fg+'"/><circle cx="45" cy="46" r="6.5" fill="'+coin+'"/></svg>'}
-$$('.logo').forEach(function(e){var d=e.dataset.v==='dark';e.innerHTML=d?logo(+e.dataset.size,'#FF8A6B','#26191C','#FFF6F1'):logo(+e.dataset.size,'#26191C','#FF8A6B','#FFF6F1')});
+$$('.logo').forEach(function(e){var d=e.dataset.v==='dark';e.innerHTML=d?logo(+e.dataset.size,'#CDEB5B','#191C15','#F7FAEE'):logo(+e.dataset.size,'#191C15','#CDEB5B','#F7FAEE')});
 /* tickers */
 $$('.tt').forEach(function(t){var s='<span>'+t.dataset.words.split('|').map(function(w){return w+' <i></i>'}).join(' ')+'</span>';t.innerHTML=s+s});
 /* stamps press in when they enter view (visible at rest; only the press animates) */
