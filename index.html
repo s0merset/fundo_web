@@ -1,0 +1,695 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Fundo Website</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* Layout: Varo-style poster bands rebuilt as Fundo's "co-op passbook": solid color bands, compressed display type, real member photography in thin ink frames, clay product objects, passbook stamps and receipt tape as the signature motion. Single deliberate light look in Prototype A's palette. */
+:root{
+  --salmon:#FF8A6B; --coral:#C2452A; --blush:#FFE2D6; --cream:#FFF6F1; --ink:#26191C; --sun:#FFD66B;
+  --paper:#FFFFFF; --muted:#6F5A57; --soft:#F3E3DB;
+  --display:'Bricolage Grotesque','Arial Narrow',system-ui,sans-serif;
+  --body:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font:400 17px/1.55 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--cream)}
+a{color:inherit}
+img{max-width:100%;display:block;height:auto}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.band{overflow-x:clip;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));border-bottom:1.5px solid var(--ink)}
+.wrap{max-width:1240px;margin:0 auto}
+.kick{display:inline-flex;align-items:center;gap:9px;font:800 13px/1 var(--body);letter-spacing:.14em;text-transform:uppercase}
+.kick::before{content:"";width:9px;height:9px;background:currentColor}
+.mega{font-family:var(--display);font-stretch:75%;font-weight:800;text-transform:uppercase;letter-spacing:-.01em;line-height:.86;margin:0;text-wrap:balance}
+.h2{font-size:clamp(50px,7.6vw,112px)}
+.lede{font-size:clamp(17px,1.45vw,20px);line-height:1.5;max-width:34em;margin:0}
+sup.fn{font:800 .36em/0 var(--body);vertical-align:super;letter-spacing:0;margin-left:3px}
+sup.fn a{text-decoration:none}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:4px;border:1.5px solid var(--ink);font:800 16px/1 var(--body);text-decoration:none;cursor:pointer;transition:transform .2s cubic-bezier(.3,1.4,.5,1),background .2s,color .2s}
+.btn:hover{transform:translateY(-3px)}
+.btn:active{transform:translateY(0)}
+.btn.p{background:var(--coral);border-color:var(--ink);color:#fff}
+.btn.p:hover{background:#A93A22}
+.btn.d{background:var(--ink);color:var(--cream)}
+.btn.o{background:transparent}
+.btn.o:hover{background:var(--ink);color:var(--cream)}
+
+/* frames: thin ink border, 4px radius, never a shadow */
+.frame{position:relative;border:1.5px solid var(--ink);border-radius:4px;overflow:hidden;background:var(--ink)}
+.frame img{width:100%;height:100%;object-fit:cover}
+
+/* passbook stamp: Fundo's signature graphic */
+.stamp{position:absolute;z-index:6;display:inline-flex;flex-direction:column;align-items:center;gap:2px;padding:10px 16px 9px;border:3px solid currentColor;border-radius:6px;color:var(--coral);background:var(--cream);font:800 12px/1.1 var(--body);letter-spacing:.14em;text-transform:uppercase;transform:rotate(-9deg)}
+.stamp b{font:800 30px/1 var(--display);font-stretch:75%;letter-spacing:.01em}
+.stamp::after{content:"";position:absolute;inset:3px;border:1.5px dashed currentColor;border-radius:3px;opacity:.55}
+.stamp.ink{color:var(--ink)}
+.stamp.sm{font-size:10px;padding:7px 11px}.stamp.sm b{font-size:22px}
+.stamp.go{animation:stampin .55s cubic-bezier(.2,1.6,.4,1) both}
+@keyframes stampin{0%{transform:rotate(-16deg) scale(1.7)}60%{transform:rotate(-8deg) scale(.94)}100%{transform:rotate(-9deg) scale(1)}}
+
+/* 3D phone showing the real app screen */
+.ph3d-wrap{font-size:16px;perspective:1600px;position:relative}
+.ph3d-wrap::after{content:"";position:absolute;left:12%;right:2%;bottom:-2.2em;height:2em;background:radial-gradient(closest-side,rgba(38,25,28,.38),rgba(38,25,28,0));filter:blur(4px);z-index:-1}
+.ph3d{position:relative;width:15em;height:31.4em;border-radius:2.9em;padding:.42em;background:linear-gradient(140deg,#6b5558 0%,#2a1c1f 22%,#130b0d 50%,#3b2a2d 78%,#7a6366 100%);transform:rotateY(-22deg) rotateX(8deg) rotateZ(3deg);transform-style:preserve-3d;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18),.06em .06em 0 #4d3a3d,.12em .12em 0 #3f2e31,.18em .18em 0 #352629,.24em .24em 0 #2c1f22,.3em .3em 0 #24181b,.36em .36em 0 #1d1316,.42em .42em 0 #170f11;animation:sway 10s ease-in-out infinite}
+.ph3d.alt{transform:rotateY(20deg) rotateX(6deg) rotateZ(-3deg);animation-name:sway2;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18),-.06em .06em 0 #4d3a3d,-.12em .12em 0 #3f2e31,-.18em .18em 0 #352629,-.24em .24em 0 #2c1f22,-.3em .3em 0 #24181b,-.36em .36em 0 #1d1316,-.42em .42em 0 #170f11}
+.ph3d::before,.ph3d::after{content:"";position:absolute;width:.22em;border-radius:.2em;background:linear-gradient(#5a4649,#1a1012)}
+.ph3d::before{left:-.2em;top:6.5em;height:2.4em;box-shadow:0 3.2em 0 #2a1c1f}
+.ph3d::after{right:-.2em;top:8.5em;height:4em}
+@keyframes sway{0%,100%{transform:rotateY(-22deg) rotateX(8deg) rotateZ(3deg)}50%{transform:rotateY(-14deg) rotateX(5deg) rotateZ(2deg) translateY(-.5em)}}
+@keyframes sway2{0%,100%{transform:rotateY(20deg) rotateX(6deg) rotateZ(-3deg)}50%{transform:rotateY(12deg) rotateX(4deg) rotateZ(-2deg) translateY(-.5em)}}
+.ph3d-scr{position:relative;width:100%;height:100%;border-radius:2.5em;background:var(--cream);overflow:hidden;padding:.85em .85em;font:500 .62em/1.3 var(--body);color:var(--ink);box-shadow:0 0 0 .3em #0b0607}
+.ph3d-scr::after{content:"";position:absolute;inset:0;background:linear-gradient(118deg,rgba(255,255,255,.42) 0%,rgba(255,255,255,.08) 30%,rgba(255,255,255,0) 31%,rgba(255,255,255,0) 100%);pointer-events:none}
+.ps-island{position:absolute;left:50%;top:.75em;width:7.5em;height:2.1em;margin-left:-3.75em;border-radius:1.2em;background:#0b0607;z-index:2}
+.ps-bar{display:flex;justify-content:space-between;font-size:.95em;padding:.1em .9em 1.1em}
+.ps-top{display:flex;justify-content:space-between;align-items:center}
+.ps-bell{width:2.6em;height:2.6em;border-radius:.9em;background:#fff;border:1px solid var(--soft);display:grid;place-items:center}
+.ps-bell i{width:.9em;height:1em;border:.16em solid var(--ink);border-bottom-width:.22em;border-radius:.6em .6em .15em .15em}
+.ps-hi{font:800 2.1em/1.02 var(--display);letter-spacing:-.02em;margin:.55em 0 .5em}
+.ps-card{border-radius:1.6em;background:var(--salmon);padding:1.1em}
+.ps-card.dark{background:var(--ink);color:var(--cream)}.ps-card.dark .ps-lab{color:var(--salmon)}
+.ps-lab{font-size:.85em;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.ps-amt{font:800 2.5em/1.05 var(--display);letter-spacing:-.02em;margin-top:.15em}
+.ps-pill{display:inline-block;margin-top:.5em;padding:.3em .8em;border-radius:99px;background:var(--blush);font-weight:800;font-size:.9em}
+.ps-btn{margin-top:.9em;height:3.1em;border-radius:1em;background:var(--ink);color:var(--cream);display:grid;place-items:center;font-weight:800;font-size:1.05em}
+.ps-qa{display:grid;grid-template-columns:repeat(4,1fr);gap:.4em;margin:1em 0 .9em;text-align:center;font-weight:700;font-size:.85em}
+.ps-qa span{display:flex;flex-direction:column;align-items:center;gap:.4em}
+.ps-qa i{width:3.6em;height:3.6em;border-radius:1.2em;background:#fff;border:1px solid var(--soft);position:relative}
+.ps-qa i::after{content:"";position:absolute;inset:1.1em;border-radius:.35em;background:var(--coral);opacity:.85}
+.ps-qa .q1{background:var(--salmon);border-color:var(--salmon)}.ps-qa .q1::after{background:var(--ink)}
+.ps-qa .q3::after{border-radius:50%}.ps-qa .q4::after{inset:1.2em 1em;border-radius:.2em}
+.ps-loan{background:#fff;border:1px solid var(--soft);border-radius:1.3em;padding:.9em 1em}
+.ps-lr{display:flex;justify-content:space-between;font-size:1.05em}
+.ps-loan small{color:var(--muted);font-size:.9em}
+.ps-trk{height:.5em;border-radius:9px;background:var(--blush);margin-top:.6em;overflow:hidden}
+.ps-trk i{display:block;width:58%;height:100%;background:var(--salmon);border-radius:9px}
+.ps-chips{display:flex;gap:.4em;margin:.9em 0 .7em}
+.ps-chips span{padding:.45em .9em;border-radius:99px;border:1px solid var(--soft);background:#fff;font-weight:800;font-size:.9em}
+.ps-chips .on{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.ps-list{background:#fff;border:1px solid var(--soft);border-radius:1.3em;padding:.2em .9em}
+.ps-row{display:flex;align-items:center;gap:.7em;padding:.7em 0;border-top:1px solid var(--soft)}
+.ps-row:first-child{border-top:0}
+.ps-row i{width:2.6em;height:2.6em;border-radius:.85em;background:var(--blush);flex-shrink:0;position:relative}
+.ps-row i::after{content:"";position:absolute;left:50%;top:50%;width:.7em;height:.7em;border-left:.18em solid var(--coral);border-top:.18em solid var(--coral);transform:translate(-50%,-30%) rotate(45deg)}
+.ps-row i.dn{background:var(--sun)}.ps-row i.dn::after{border-color:var(--ink);transform:translate(-50%,-70%) rotate(225deg)}
+.ps-row span{flex:1;min-width:0}
+.ps-row b{display:block;font-size:1.02em}
+.ps-row small{display:block;color:var(--muted);font-size:.85em}
+.ps-row em{font-style:normal;font-weight:800;text-align:right;font-size:1em}
+.ps-row em.in{color:var(--coral)}
+.ps-tabs{position:absolute;left:.8em;right:.8em;bottom:.8em;height:4em;border-radius:1.4em;background:#fff;border:1px solid var(--soft);display:flex;align-items:center;justify-content:space-around;font-weight:700;font-size:.85em;color:var(--muted)}
+.ps-tabs .on{background:var(--salmon);color:var(--ink);padding:.5em 1em;border-radius:1em}
+.ps-rem{display:flex;align-items:center;gap:.7em;margin-top:.7em;background:#fff;border:1px solid var(--soft);border-radius:1.3em;padding:.8em 1em}
+.ps-rem i{width:2.4em;height:2.4em;border-radius:.8em;background:var(--sun);flex-shrink:0}
+.ps-rem span{flex:1}.ps-rem b{display:block}.ps-rem small{display:block;color:var(--muted);font-size:.85em}
+.ps-rem em{font-style:normal;font-weight:800;font-size:.85em;background:var(--ink);color:var(--cream);padding:.3em .7em;border-radius:99px}
+.hero-ph{position:absolute;z-index:6;left:-2%;bottom:-5%}
+.rec-ph{display:flex;justify-content:center;font-size:19px;padding-block:10px 30px}
+@media (min-width:941px){.hero-art{padding-left:26%}.hero-ph{font-size:18px}}
+@media (max-width:940px){.hero-art{padding-left:32%}.hero-ph{font-size:12.5px;bottom:-6%}.rec-ph{font-size:15px}}
+@media (max-width:420px){.hero-ph{font-size:11px}}
+/* clay objects float slowly */
+.obj{position:absolute;z-index:5;pointer-events:none;animation:float 7s ease-in-out infinite}
+.obj.b{animation-duration:8.5s;animation-delay:-3s}
+@keyframes float{0%,100%{transform:translateY(0) rotate(var(--r,0deg))}50%{transform:translateY(-14px) rotate(calc(var(--r,0deg) + 4deg))}}
+
+/* announcement + nav */
+.ann{background:var(--ink);color:var(--cream);font-size:14px;text-align:center;padding-block:10px;border:0}
+.ann a{color:var(--salmon);font-weight:800}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--cream)}
+.nav .wrap{display:flex;align-items:center;gap:28px;height:72px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand b{font:800 27px/1 var(--display);letter-spacing:-.03em}
+.links{display:flex;gap:26px;margin-left:auto}
+.links a{text-decoration:none;font-weight:700;font-size:15px;padding:8px 0;border-bottom:2px solid transparent}
+.links a:hover{border-color:var(--coral)}
+.nav .btn{min-height:44px;padding:0 18px;font-size:15px}
+@media (max-width:880px){.links{display:none}.nav .btn{margin-left:auto}}
+.quick{display:none;background:var(--cream)}
+.qs{display:flex;gap:8px;overflow-x:auto;padding-block:10px;scrollbar-width:none}
+.qs::-webkit-scrollbar{display:none}
+.qs a{flex-shrink:0;text-decoration:none;font-weight:800;font-size:14px;border:1.5px solid var(--ink);border-radius:4px;padding:7px 12px;background:var(--blush)}
+@media (max-width:880px){.quick{display:block}}
+
+/* hero */
+.hero{background:var(--salmon)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:stretch;padding-block:56px 40px}
+@media (min-width:941px){.hero-art{display:flex;margin:34px 0 46px}.hero-art .frame{aspect-ratio:auto;flex:1;min-height:520px}.hero .lede{max-width:30em}}
+.hero-copy{position:relative;min-width:0;display:flex;flex-direction:column;gap:22px;align-items:flex-start}
+.m-obj{display:none}
+@media (max-width:940px){.m-obj{display:block;position:absolute;right:-6px;top:-34px;width:78px;animation:float 7s ease-in-out infinite}}
+.hero .mega{font-size:clamp(66px,9.6vw,142px)}
+.hero .mega span{display:block;animation:rise .8s cubic-bezier(.2,.9,.25,1) both}
+.hero .mega span:nth-child(2){animation-delay:.07s}.hero .mega span:nth-child(3){animation-delay:.14s}
+@keyframes rise{from{transform:translateY(32%);opacity:0}to{transform:none;opacity:1}}
+.cap{display:flex;gap:8px;max-width:480px;width:100%;flex-wrap:wrap}
+.cap input{flex:1 1 220px;min-width:0;height:52px;border:1.5px solid var(--ink);border-radius:4px;background:var(--cream);padding:0 16px;font-size:16px}
+.cap input::placeholder{color:#7D6863}
+.cap-note{font-size:13px;margin:-14px 0 0;opacity:.85}
+@media (max-width:520px){.hero .cap .btn{width:100%}}
+.cap-ok{display:none;padding:12px 14px;background:var(--cream);border:1.5px solid var(--ink);border-radius:4px;font-weight:700;font-size:15px;max-width:480px;color:var(--ink)}
+.cap-ok.on{display:block}
+.hero-art{position:relative;min-width:0;justify-self:center;width:min(100%,500px)}
+.hero-art .frame{aspect-ratio:4/5}
+.hero-art .frame img{object-position:50% 18%;transform:scale(1.14);transform-origin:50% 22%}
+.hero-art .o2{width:27%;right:-8%;top:-7%;--r:10deg}
+.hero-art .stamp{right:5%;top:6%}
+/* receipt tape */
+.tape{position:absolute;z-index:5;left:-12%;top:54%;width:210px;background:var(--paper);border:1.5px solid var(--ink);border-radius:3px 3px 0 0;padding:12px 14px 16px;font:600 12.5px/1.35 var(--body);transform:rotate(-3deg)}
+.tape::after{content:"";position:absolute;left:-1.5px;right:-1.5px;bottom:-9px;height:9px;background:linear-gradient(-45deg,transparent 6px,var(--paper) 0) 0 0/12px 9px repeat-x,linear-gradient(45deg,transparent 6px,var(--paper) 0) 0 0/12px 9px repeat-x}
+.tape .th{display:flex;justify-content:space-between;font:800 11px var(--body);letter-spacing:.12em;text-transform:uppercase;padding-bottom:8px;border-bottom:1.5px dashed var(--ink);margin-bottom:6px}
+.tape .ln{display:flex;justify-content:space-between;gap:10px;padding:4px 0;white-space:nowrap}
+.tape .ln:nth-child(2){animation-delay:.9s}.tape .ln:nth-child(3){animation-delay:1.3s}.tape .ln:nth-child(4){animation-delay:1.7s}.tape .ln:nth-child(5){animation-delay:2.1s}
+.tape .ln span{color:var(--muted)}
+.tape .tot{border-top:1.5px dashed var(--ink);margin-top:4px;padding-top:7px;font-weight:800}
+@keyframes tapein{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0 0 -12px 0)}}
+@keyframes print{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+/* product tiles */
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding-bottom:56px}
+.tile{position:relative;display:flex;align-items:center;gap:14px;background:var(--cream);border:1.5px solid var(--ink);border-radius:4px;padding:14px 16px 14px 12px;text-decoration:none;min-height:96px;transition:transform .25s cubic-bezier(.3,1.4,.5,1),background .2s}
+.tile:hover{transform:translateY(-4px);background:var(--paper)}
+.ti{width:48px;height:48px;flex-shrink:0;display:grid;place-items:center;border:1.5px solid var(--ink);border-radius:4px;background:var(--salmon);transition:transform .3s cubic-bezier(.3,1.6,.5,1)}
+.tile:hover .ti{transform:rotate(-6deg)}
+.tile b{display:block;font-size:16px;line-height:1.2}
+.tile small{display:block;font-size:13.5px;color:var(--muted);margin-top:2px}
+.tile .ar{margin-left:auto;font-weight:800}
+@media (max-width:900px){.tiles{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:940px){.hero-grid{grid-template-columns:1fr;padding-top:44px;gap:28px}.hero-art{margin:0 0 24px;width:100%}.hero-art .frame{aspect-ratio:4/5}.hero-art .frame img{transform:none;object-position:50% 70%}.hero-art .o2{right:2%!important;top:-4%!important}.hero-art .stamp{right:3%!important;top:auto!important;bottom:7%!important}.hero-art .o2{right:-6%;top:-5%;width:24%}.tape{left:-6%}.hero-art .stamp{right:-5%;bottom:auto;top:30%}}
+.hero-art .frame{min-height:0}
+@media (max-width:520px){.tile small{display:none}.tiles{grid-template-columns:1fr;gap:8px}.tile{min-height:0;padding:8px 12px 8px 8px;gap:12px}.ti{width:40px;height:40px}.tile b{font-size:15.5px}.tape{display:none;left:3%;top:4%;bottom:auto;width:auto;font-size:10.5px;padding:9px 10px 12px}.hero-art .stamp{top:24%;font-size:10px;padding:7px 10px}.hero-art .stamp b{font-size:22px}}
+
+/* double ticker */
+.tickers{background:var(--blush);padding-block:30px;overflow:hidden;border-bottom:1.5px solid var(--ink)}
+.tick{overflow:hidden;border-block:1.5px solid var(--ink);padding-block:14px}
+.tick.a{background:var(--ink);color:var(--salmon);transform:rotate(-1.6deg) scale(1.03)}
+.tick.b{background:var(--sun);color:var(--ink);transform:rotate(1.2deg) scale(1.03);margin-top:22px}
+.tt{display:flex;width:max-content;animation:tick 42s linear infinite}
+.tick.b .tt{animation-direction:reverse;animation-duration:48s}
+.tt span{font:800 clamp(30px,4.2vw,54px)/1 var(--display);font-stretch:75%;text-transform:uppercase;white-space:nowrap;display:flex;align-items:center;gap:30px;padding-right:30px}
+.tt i{display:inline-block;width:.5em;height:.5em;border:3px solid currentColor;border-radius:3px;transform:rotate(45deg)}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* stats */
+.stats{background:var(--cream)}
+.stats .wrap{padding-block:64px 80px}
+.bign{display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:end;margin-top:36px}
+.bn-main .n{font:800 clamp(130px,17vw,250px)/.8 var(--display);font-stretch:75%;letter-spacing:-.03em;color:var(--coral)}
+.bn-main p{margin:18px 0 0;font-size:18px;max-width:30em;font-weight:500}
+.bn-side{list-style:none;margin:0;padding:0;border-top:1.5px solid var(--ink)}
+.bn-side li{display:grid;grid-template-columns:150px 1fr;gap:16px;align-items:baseline;padding:16px 0;border-bottom:1.5px solid var(--ink)}
+.bn-side b{font:800 48px/.9 var(--display);font-stretch:75%;text-transform:uppercase}
+.bn-side span{font-size:15.5px}
+@media (max-width:820px){.bign{grid-template-columns:1fr;gap:24px}.bn-side li{grid-template-columns:110px 1fr}.bn-side b{font-size:38px}}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);border:1.5px solid var(--ink);border-radius:4px;background:var(--paper);margin-top:34px}
+.stat{padding:28px 26px;min-width:0}
+.stat+.stat{border-left:1.5px solid var(--ink)}
+.stat .n{font:800 clamp(78px,8.6vw,128px)/.86 var(--display);font-stretch:75%;letter-spacing:-.02em;color:var(--coral)}
+.stat p{margin:14px 0 0;font-size:16px;max-width:22em}
+@media (max-width:760px){.stat-row{grid-template-columns:1fr}.stat+.stat{border-left:0;border-top:1.5px solid var(--ink)}}
+
+/* photo splits */
+.split .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;padding-block:92px}
+.split .copy{min-width:0;display:flex;flex-direction:column;gap:20px;align-items:flex-start}
+.split .art{position:relative;min-width:0}
+.split.rev .copy{order:2}
+.split.aright .art{order:2}.split.aleft .art{order:-1}
+.split .frame{aspect-ratio:4/3}
+#pay .frame{aspect-ratio:1/1;max-width:520px}
+#coops .frame{aspect-ratio:1100/935}
+.split .frame.tall{aspect-ratio:4/5;max-width:470px;margin-inline:auto}
+.ticks{list-style:none;margin:2px 0 0;padding:0;display:grid;gap:10px}
+.ticks li{display:flex;gap:12px;align-items:flex-start;font-weight:600}
+.ticks li::before{content:"";flex-shrink:0;width:18px;height:18px;margin-top:4px;border-radius:3px;background:var(--ink) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FF8A6B' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/13px no-repeat}
+.b-sun{background:var(--sun)}.b-cream{background:var(--cream)}.b-blush{background:var(--blush)}.b-ink{background:var(--ink);color:var(--cream)}.b-white{background:var(--paper)}.b-salmon{background:var(--salmon)}
+.methods{display:flex;gap:8px;flex-wrap:wrap}
+.methods span{border:1.5px solid var(--ink);border-radius:4px;padding:8px 14px;font-weight:800;font-size:14px;background:var(--blush)}
+.card{position:absolute;z-index:6;background:var(--paper);border:1.5px solid var(--ink);border-radius:4px;padding:14px 16px;font-size:14px;line-height:1.4;color:var(--ink)}
+.card .lab{display:flex;justify-content:space-between;gap:12px;font:800 11px var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.bubble{background:#ECECEF;border-radius:14px 14px 14px 4px;padding:10px 12px;color:#1d1d20}
+@media (max-width:920px){.split .wrap{grid-template-columns:1fr;gap:56px;padding-block:68px}.split.rev .copy{order:0}.split .art .obj{width:22%!important;right:-3%!important;top:-7%!important;left:auto!important}.split .art .card{right:3%!important;left:auto!important;top:auto!important;bottom:-8%!important}.split .art{order:2!important}}
+
+/* passbook card */
+.pb{background:var(--cream);border:1.5px solid var(--ink);border-radius:4px;padding:18px 18px 8px;max-width:520px;margin-inline:auto;transform:rotate(1.2deg)}
+.pb-h{display:flex;gap:12px;align-items:center;padding-bottom:12px;border-bottom:1.5px solid var(--ink)}
+.pb-h b{display:block;font:800 22px/1 var(--display);font-stretch:80%;text-transform:uppercase}
+.pb-h small{display:block;font-size:13px;color:var(--muted);margin-top:3px}
+.pb-t{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.pb-t th{font:800 11px var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-align:left;padding:10px 0 6px}
+.pb-t th:last-child,.pb-t td:last-child{text-align:right}
+.pb-t td{padding:11px 0;border-top:1.5px dashed var(--ink);font-weight:700;font-size:15px;vertical-align:top}
+.pb-t td:first-child{width:64px;color:var(--muted);font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase}
+.pb-t td small{display:block;font-weight:500;font-size:12.5px;color:var(--muted);margin-top:2px}
+.pb-t tr.in td:last-child span,.pb-t tr.in td:last-child{color:var(--coral)}
+.pb-t tfoot td{border-top:1.5px solid var(--ink);font:800 26px/1 var(--display);font-stretch:78%;text-transform:uppercase;padding:14px 0 12px}
+.pb-t tfoot td:first-child{font:800 12px var(--body);letter-spacing:.12em;width:auto;vertical-align:middle}
+.offers{display:grid;grid-template-columns:.8fr 2fr;gap:28px;align-items:center;padding-block:56px}
+.offers .offers-h p{font-size:18px}
+.offers .kick+p{margin-top:14px}
+.offers-h p{margin:12px 0 0;font-weight:600}
+.ohead{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end}
+.og{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}
+@media (max-width:820px){.ohead{grid-template-columns:1fr;gap:16px}}
+.oc{background:var(--cream);border:1.5px solid var(--ink);border-radius:4px;padding:22px;display:flex;flex-direction:column;gap:8px;min-width:0;transition:transform .25s cubic-bezier(.3,1.4,.5,1)}
+.oc:hover{transform:translateY(-5px)}
+.oc img{width:120px;height:120px;object-fit:contain;margin:-10px 0 0 -6px;transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+.oc:hover img{transform:rotate(-6deg) scale(1.06)}
+.oc-go{margin-top:auto;padding-top:12px;border-top:1.5px dashed var(--ink);font-weight:800;font-size:14px}
+.oc .tag{align-self:flex-start;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 8px;border-radius:3px;background:var(--sun);border:1.5px solid var(--ink)}
+.oc h3{font:800 38px/.92 var(--display);font-stretch:78%;text-transform:uppercase;margin:6px 0 0}
+.oc p{margin:0;font-size:15.5px}
+@media (max-width:920px){.og{grid-template-columns:1fr}.pb{transform:none}.oc img{width:96px;height:96px}}
+/* calculator */
+.calc{position:relative;z-index:6;background:var(--cream);color:var(--ink);border:1.5px solid var(--cream);border-radius:4px;padding:22px;margin:6px 0 0;width:100%;max-width:480px}
+.calc .top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.calc label{font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase}
+.calc .big{font:800 clamp(52px,6vw,72px)/1 var(--display);font-stretch:75%;margin:10px 0 2px;font-variant-numeric:tabular-nums}
+.rng{-webkit-appearance:none;appearance:none;width:100%;height:44px;background:transparent;margin:0;cursor:pointer}
+.rng::-webkit-slider-runnable-track{height:10px;border-radius:2px;border:1.5px solid var(--ink);background:linear-gradient(to right,var(--salmon) var(--p,30%),var(--blush) var(--p,30%))}
+.rng::-moz-range-track{height:10px;border-radius:2px;border:1.5px solid var(--ink);background:var(--blush)}
+.rng::-moz-range-progress{height:10px;background:var(--salmon)}
+.rng::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;margin-top:-10.5px;border-radius:4px;background:var(--ink);border:3px solid var(--cream);box-shadow:0 0 0 1.5px var(--ink)}
+.rng::-moz-range-thumb{width:24px;height:24px;border-radius:4px;background:var(--ink);border:3px solid var(--cream)}
+.qk{display:flex;gap:8px;margin:4px 0 14px;flex-wrap:wrap}
+.qk button{border:1.5px solid var(--ink);background:var(--blush);border-radius:4px;padding:8px 12px;font-weight:800;font-size:14px;cursor:pointer;min-height:40px}
+.qk button[aria-pressed=true]{background:var(--ink);color:var(--cream)}
+.krow{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-top:1.5px solid var(--ink);font-size:15.5px;font-variant-numeric:tabular-nums}
+.krow span{color:var(--muted)}
+.krow b{text-align:right}
+.qk button{flex:1 1 auto}
+@media (max-width:420px){.qk{gap:6px}.qk button{padding:7px 8px;font-size:13px}}
+.calc .note{font-size:13.5px;color:var(--muted);margin:10px 0 0}
+
+/* steps */
+.tl{list-style:none;margin:44px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:32px;position:relative}
+.tl::before{content:"";position:absolute;left:44px;right:4%;top:20px;border-top:3px dashed var(--ink)}
+.tl li{position:relative;display:flex;flex-direction:column;gap:10px;min-width:0}
+.tl img{width:124px;height:124px;object-fit:contain;position:relative;z-index:1;background:var(--sun);padding:0 8px;margin-left:-8px}
+.tl .no{font:800 22px/1 var(--body);display:inline-grid;place-items:center;width:40px;height:40px;border:1.5px solid var(--ink);border-radius:4px;background:var(--cream)}
+.tl h3{font:800 40px/.92 var(--display);font-stretch:78%;text-transform:uppercase;margin:4px 0 0}
+.tl p{margin:0;font-size:16px;max-width:26em}
+@media (max-width:820px){.tl{grid-template-columns:1fr;gap:28px}.tl::before{display:none}.tl img{width:96px;height:96px}.tl li{padding-left:0}}
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:40px;border:1.5px solid var(--ink);border-radius:4px;background:var(--paper)}
+.step{position:relative;padding:28px 26px;min-width:0;display:flex;flex-direction:column;gap:10px}
+.step+.step{border-left:1.5px solid var(--ink)}
+.step .no{font:800 92px/.8 var(--display);font-stretch:75%;color:var(--salmon);-webkit-text-stroke:1.5px var(--ink)}
+.step img{position:absolute;right:16px;top:14px;width:96px;height:96px;object-fit:contain}
+.step h3{font:800 30px/1 var(--display);font-stretch:78%;text-transform:uppercase;margin:6px 0 0}
+.step p{margin:0;font-size:15.5px}
+@media (max-width:820px){.sgrid{grid-template-columns:1fr}.step+.step{border-left:0;border-top:1.5px solid var(--ink)}}
+
+/* co-op list */
+.clist{margin:0;padding:0;list-style:none;width:100%;border-top:1.5px solid var(--ink)}
+.clist li{padding:13px 0;border-bottom:1.5px solid var(--ink);display:flex;justify-content:space-between;gap:16px;font-weight:700}
+.clist li span{color:var(--coral);font-weight:800;white-space:nowrap}
+
+/* members */
+.mnote{display:inline-block;margin:16px 0 0;font-weight:800;font-size:14px;border:1.5px solid var(--ink);border-radius:4px;padding:6px 10px;background:var(--blush)}
+.mgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}
+.mc{background:var(--cream);border:1.5px solid var(--ink);border-radius:4px;overflow:hidden;display:flex;flex-direction:column;min-width:0;transition:transform .25s cubic-bezier(.3,1.4,.5,1)}
+.mc:hover{transform:translateY(-5px) rotate(-.6deg)}
+.mc .ph{aspect-ratio:1;border-bottom:1.5px solid var(--ink);overflow:hidden}
+.mc .ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.mc:hover .ph img{transform:scale(1.05)}
+.mc .tx{padding:16px 16px 18px;display:flex;flex-direction:column;gap:8px}
+.mc h3{margin:0;font:800 30px/1 var(--display);font-stretch:78%;text-transform:uppercase}
+.mc .who{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--coral)}
+.mc p{margin:0;font-size:15px}
+.mc .uses{margin-top:auto;padding:12px 16px;border-top:1.5px dashed var(--ink);font-size:13.5px;font-weight:700;display:flex;gap:8px;align-items:center}
+.mc .uses img{width:28px;height:28px;object-fit:contain}
+@media (max-width:1040px){.mgrid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.mgrid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px));padding-bottom:6px;scrollbar-width:none}.mgrid::-webkit-scrollbar{display:none}.mc{flex:0 0 80%;scroll-snap-align:start}.mc .ph{aspect-ratio:4/3}}
+
+/* faq */
+.faq .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;padding-block:84px;align-items:center}
+.faq details{border-top:1.5px solid var(--ink)}
+.faq details:last-child{border-bottom:1.5px solid var(--ink)}
+.faq-side{display:flex;flex-direction:column;align-items:flex-start;gap:18px}
+.faq-panel{display:flex;gap:16px;align-items:center;border:1.5px solid var(--ink);border-radius:4px;background:var(--cream);padding:16px 18px;max-width:380px}
+.faq-obj{width:84px;flex-shrink:0;animation:float 7s ease-in-out infinite}
+.faq-note{margin:0;font-weight:600;font-size:15px}
+
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;font:800 19px/1.3 var(--body)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex-shrink:0;width:34px;height:34px;border:1.5px solid var(--ink);border-radius:4px;display:grid;place-items:center;font:700 22px/1 var(--body);transition:transform .25s,background .2s}
+.faq details[open] summary::after{content:"−";background:var(--salmon)}
+.faq details p{margin:0 0 22px;max-width:40em;color:var(--ink)}
+@media (max-width:860px){.faq .wrap{grid-template-columns:1fr;gap:20px}}
+
+/* final */
+.final{background:var(--sun);color:var(--ink)}
+.final .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:stretch;padding-block:88px}
+.final .mega{font-size:clamp(84px,13vw,200px)}
+.final .copy{display:flex;flex-direction:column;gap:22px;min-width:0}
+.final .cap input{background:var(--cream)}
+.final .frame{height:100%;min-height:440px}
+.final .cap{display:grid;grid-template-columns:1fr 1fr;max-width:none;width:100%}
+.final .cap input{height:58px}
+.final .cap .btn{grid-column:1/-1;width:100%;min-height:64px;font-size:18px}
+.final .trust{margin:-8px 0 0;font-size:14px;font-weight:600}
+@media (max-width:520px){.final .cap{grid-template-columns:1fr}}
+.final .stamp{left:-4%;top:-5%;color:var(--coral)}
+@media (max-width:920px){.final .wrap{grid-template-columns:1fr}.final .frame{min-height:0;height:auto;aspect-ratio:4/3}.final .stamp{display:none}}
+
+/* footer */
+.foot{background:var(--ink);color:var(--cream);border:0}
+.foot .wrap{padding-block:56px 40px}
+.fcols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px}
+.fcols h4{margin:0 0 12px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--salmon)}
+.fcols a{display:block;text-decoration:none;padding:5px 0;font-size:15px;opacity:.9}
+.fcols a:hover{opacity:1;text-decoration:underline}
+.apps{grid-column:1/-1;display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding-top:22px;border-top:1px solid #4A3A37;font-weight:700}
+.apps .badge{border:1.5px solid var(--cream);border-radius:4px;padding:8px 14px;font-size:14px}
+.fnotes{margin-top:44px;padding-top:24px;border-top:1px solid #4A3A37;font-size:13px;line-height:1.55;color:#CDBDB8;display:grid;gap:8px}
+.fnotes p{margin:0;max-width:80em}
+@media (max-width:760px){.fcols{grid-template-columns:1fr 1fr}.fcols>div:first-child{grid-column:1/-1}}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;animation-delay:0s!important;transition-duration:.01ms!important}
+  html{scroll-behavior:auto}
+}
+</style>
+
+<div class="ann band">Fundo is opening to member co-ops in Cebu first. <a href="#coops">Bring Fundo to your co-op</a></div>
+
+<header class="nav band">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Fundo home"><span class="logo" data-size="38"></span><b>fundo</b></a>
+    <nav class="links" aria-label="Main">
+      <a href="#records">Records</a><a href="#pay">Payments</a><a href="#reminders">Reminders</a><a href="#early">Pay early</a><a href="#coops">For co-ops</a><a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn p" href="#join">Get early access</a>
+  </div>
+</header>
+
+<nav class="quick band" aria-label="Jump to"><div class="qs"><a href="#records">Records</a><a href="#pay">Pay</a><a href="#early">Pay early</a><a href="#reminders">Reminders</a><a href="#how">Link co-ops</a><a href="#offers">Loans</a></div></nav>
+<main id="top">
+<section class="hero band" aria-labelledby="hero-h">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="kick">The co-op member app</span>
+        <h1 class="mega" id="hero-h"><span>Your co-op</span><span>passbook,</span><span>in your pocket.</span></h1>
+        <p class="lede">See the loans, payments and due dates your co-op keeps on record. Pay by GCash, Maya or bank transfer, and get a text before anything is due.</p>
+        <form class="cap" data-form="hero">
+          <label for="m1" class="sr">Mobile number</label>
+          <input id="m1" type="tel" inputmode="tel" placeholder="Mobile number, e.g. 0917 000 0000" autocomplete="tel">
+          <button class="btn d" type="submit">Join the list</button>
+        </form>
+        <p class="cap-note">We'll text you once your co-op is on Fundo.</p>
+        <div class="cap-ok" role="status" data-ok="hero"></div>
+      </div>
+      <div class="hero-art">
+        <div class="frame"><img src="img/hero.webp" alt="A teacher in Cebu smiles at her phone outside her co-op office" width="1200" height="1500" fetchpriority="high"></div>
+        <div class="ph3d-wrap hero-ph" role="img" aria-label="The Fundo app home screen: next payment of 4,250 pesos due November 3, with a Pay now button">
+          <div class="ph3d"><div class="ph3d-scr">
+            <div class="ps-island"></div>
+            <div class="ps-bar"><b>9:41</b><span>5G ▮▮▮</span></div>
+            <div class="ps-top"><span class="logo" data-size="26"></span><span class="ps-bell"><i></i></span></div>
+            <div class="ps-hi">Good evening,<br>Ana</div>
+            <div class="ps-card">
+              <div class="ps-lab">Next payment · Salary Loan</div>
+              <div class="ps-amt">₱4,250.00</div>
+              <span class="ps-pill">Due Nov 3 · in 10 days</span>
+              <div class="ps-btn">Pay now</div>
+            </div>
+            <div class="ps-qa"><span><i class="q1"></i>Pay</span><span><i class="q2"></i>Early</span><span><i class="q3"></i>Co-ops</span><span><i class="q4"></i>History</span></div>
+            <div class="ps-loan"><div class="ps-lr"><b>Salary Loan</b><b>₱38,500</b></div><small>14 of 24 payments</small><div class="ps-trk"><i></i></div></div>
+            <div class="ps-rem"><i></i><span><b>SMS reminder set</b><small>Oct 31 · 3 days before it's due</small></span><em>On</em></div>
+            <div class="ps-tabs"><span class="on">Home</span><span>Activity</span><span>Offers</span><span>Me</span></div>
+          </div></div>
+        </div>
+        <div class="stamp js-stamp" aria-hidden="true">Recorded<b>Nov 3 · ₱4,250</b>Bayanihan MPC</div>
+      </div>
+    </div>
+    <nav class="tiles" aria-label="What Fundo does">
+      <a class="tile" href="#records"><span class="ti"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 6h14M5 12h14M5 18h9"/></svg></span><span><b>See your records</b><small>Payments your co-op posts</small></span><span class="ar" aria-hidden="true">→</span></a>
+      <a class="tile" href="#pay"><span class="ti"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7a2 2 0 0 1 2-2h12v4"/><path d="M4 7v10a2 2 0 0 0 2 2h14V9H6a2 2 0 0 1-2-2z"/><circle cx="16" cy="14" r="1"/></svg></span><span><b>Pay your loan</b><small>GCash, Maya or bank</small></span><span class="ar" aria-hidden="true">→</span></a>
+      <a class="tile" href="#early"><span class="ti"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 21V4M6 5h11l-2 4 2 4H6"/></svg></span><span><b>Pay off early</b><small>See your new balance first</small></span><span class="ar" aria-hidden="true">→</span></a>
+      <a class="tile" href="#reminders"><span class="ti"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9a6 6 0 0 1 12 0c0 6 2 7 2 7H4s2-1 2-7"/><path d="M10 20a2 2 0 0 0 4 0"/></svg></span><span><b>Never miss a due date</b><small>Calendar and SMS alerts</small></span><span class="ar" aria-hidden="true">→</span></a>
+      <a class="tile" href="#how"><span class="ti"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.2 6.8A8 8 0 0 1 12 4a8 8 0 0 1 8 8v1.5"/><path d="M4 11.5V12c0 2.4.6 4.6 1.7 6.4"/><path d="M8 12a4 4 0 0 1 8 0c0 3 .5 5.2 1.6 7"/><path d="M12 12v1.5c0 2.6.8 4.8 2.2 6.5"/></svg></span><span><b>Sign in with a touch</b><small>Fingerprint or passcode</small></span><span class="ar" aria-hidden="true">→</span></a>
+      <a class="tile" href="#how"><span class="ti"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3A4 4 0 0 0 10 18.7l1-1"/></svg></span><span><b>Link all your co-ops</b><small>All memberships together</small></span><span class="ar" aria-hidden="true">→</span></a>
+    </nav>
+  </div>
+</section>
+
+<div class="tickers" aria-hidden="true">
+  <div class="tick a"><div class="tt" data-words="Track every loan|Pay by GCash|Pay by Maya|Bank transfer|Fingerprint sign-in|Every co-op, one app"></div></div>
+  <div class="tick b"><div class="tt" data-words="A text 3 days before|Google Calendar reminders|Pay ahead any time|Your co-op keeps the books|No lining up for your balance"></div></div>
+</div>
+
+<section class="stats band" aria-labelledby="st-h">
+  <div class="wrap">
+    <span class="kick" style="color:var(--coral)">Made for members</span>
+    <h2 class="mega h2" id="st-h" style="margin-top:14px">No more lining up<br>to ask your balance.</h2>
+    <div class="bign">
+      <div class="bn-main"><div class="n">3 days<sup class="fn"><a href="#fn1">1</a></sup></div><p>Reminders start three days before a due date, by SMS, Google Calendar or in-app. Choose 3 days, 1 day or the day itself.</p></div>
+      <ul class="bn-side">
+        <li><b>3 ways</b><span>to pay: GCash, Maya or bank transfer, each confirmed with your fingerprint.<sup class="fn"><a href="#fn2">2</a></sup></span></li>
+        <li><b>1 app</b><span>for every co-op you belong to, with all your loans side by side.</span></li>
+        <li><b>1 touch</b><span>to sign in with your fingerprint, or a 6-digit passcode.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="split b-sun band" id="records" aria-labelledby="rc-h">
+  <div class="wrap">
+    <div class="copy">
+      <span class="kick">Transaction history</span>
+      <h2 class="mega h2" id="rc-h">Every peso, on the record.</h2>
+      <p class="lede">Your co-op passbook, always up to date. Every payment, release and early repayment your co-op records shows up in Fundo with its reference number.</p>
+      <ul class="ticks"><li>Filter by payments or loan releases</li><li>Tap any line for its reference number</li><li>Keep your personal info current from the Me tab</li></ul>
+    </div>
+    <div class="art">
+      <div class="ph3d-wrap rec-ph" role="img" aria-label="The Fundo Activity screen listing loan payments and a loan release">
+        <div class="ph3d alt"><div class="ph3d-scr">
+          <div class="ps-island"></div>
+          <div class="ps-bar"><b>9:41</b><span>5G</span></div>
+          <div class="ps-hi" style="margin-top:.2em">Activity</div>
+          <div class="ps-card dark"><div class="ps-lab">Paid this month</div><div class="ps-amt">₱5,250.00</div></div>
+          <div class="ps-chips"><span class="on">All</span><span>Payments</span><span>Releases</span></div>
+          <div class="ps-list">
+            <div class="ps-row"><i class="up"></i><span><b>Loan payment</b><small>Salary · GCash</small></span><em>−₱4,250<small>Oct 3</small></em></div>
+            <div class="ps-row"><i class="up"></i><span><b>Loan payment</b><small>Emergency · bank</small></span><em>−₱1,000<small>Oct 3</small></em></div>
+            <div class="ps-row"><i class="up"></i><span><b>Early repayment</b><small>Emergency · GCash</small></span><em>−₱2,000<small>Sep 20</small></em></div>
+            <div class="ps-row"><i class="up"></i><span><b>Loan payment</b><small>Salary · bank</small></span><em>−₱4,250<small>Sep 3</small></em></div>
+            <div class="ps-row"><i class="dn"></i><span><b>Loan released</b><small>Emergency · co-op</small></span><em class="in">+₱6,000<small>Aug 14</small></em></div>
+            <div class="ps-row"><i class="up"></i><span><b>Loan payment</b><small>Salary · GCash</small></span><em>−₱4,250<small>Aug 3</small></em></div>
+          </div>
+          <div class="ps-tabs"><span>Home</span><span class="on">Activity</span><span>Offers</span><span>Me</span></div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="b-salmon band" id="offers" aria-labelledby="of-h">
+  <div class="wrap" style="padding-block:88px">
+    <div class="ohead">
+      <div><span class="kick">Products and offers</span><h2 class="mega h2" id="of-h" style="margin-top:14px">Loans your co-op offers.</h2></div>
+      <p class="lede">Browse what your co-op lends and check if you qualify, right in the app. Your request goes to your co-op, never to a third party.</p>
+    </div>
+    <div class="og">
+      <article class="oc"><span class="tag">Most common</span><h3>Salary Loan</h3><p>Repaid in installments through your regular pay cycle.</p><span class="oc-go">Check eligibility in the app →</span></article>
+      <article class="oc"><span class="tag" style="background:var(--salmon)">Fast release</span><h3>Emergency Loan</h3><p>Quicker release for hospital bills, repairs and other urgent costs.</p><span class="oc-go">Check eligibility in the app →</span></article>
+      <article class="oc"><span class="tag" style="background:var(--blush)">For business</span><h3>Livelihood Loan</h3><p>Capital to start or grow a sari-sari store, farm or food stall.</p><span class="oc-go">Check eligibility in the app →</span></article>
+    </div>
+  </div>
+</section>
+
+<section class="split b-cream band" id="pay" aria-labelledby="p-h">
+  <div class="wrap">
+    <div class="art">
+      <div class="frame"><img src="img/pay.webp" alt="A tricycle driver pays his loan from his phone at a sari-sari store" width="1100" height="1090" loading="lazy"></div>
+      <div class="stamp js-stamp sm" style="right:4%;bottom:6%" aria-hidden="true">Paid<b>₱4,250.00</b>via GCash</div>
+    </div>
+    <div class="copy">
+      <span class="kick">Loan payment</span>
+      <h2 class="mega h2" id="p-h">Pay from the wallet you already use.</h2>
+      <p class="lede">Pick GCash, Maya or a bank transfer, confirm with your fingerprint, and you're done. The money goes straight to your co-op. Fundo never holds it, and your receipt updates the moment your co-op records it.<sup class="fn"><a href="#fn2">2</a></sup></p>
+      <div class="methods"><span>GCash</span><span>Maya</span><span>InstaPay</span><span>PESONet</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="split b-blush band aright" id="reminders" aria-labelledby="r-h">
+  <div class="wrap">
+    <div class="art">
+      <div class="frame tall"><img src="img/nurse.webp" alt="A nurse on a jeepney smiles at a text message on her phone" width="1200" height="1500" loading="lazy" style="object-position:50% 30%"></div>
+      <div class="card rcard" style="right:-6%;top:44%;width:min(62%,260px)"><div class="lab"><span>SMS · Fundo</span><span>Oct 31</span></div><div class="bubble">Hi Ana, your Salary Loan payment of ₱4,250.00 is due in 3 days (Nov 3).</div></div>
+    </div>
+    <div class="copy">
+      <span class="kick">Reminders</span>
+      <h2 class="mega h2" id="r-h">Hear about it before it's due.</h2>
+      <p class="lede">Choose how Fundo reaches you. Turn on all three, or just the one you actually check.</p>
+      <ul class="ticks"><li>In-app notifications for payments and offers</li><li>Due dates added to your Google Calendar</li><li>SMS or MMS alerts, even with no mobile data</li></ul>
+    </div>
+  </div>
+</section>
+
+<section class="split b-ink band aleft" id="early" aria-labelledby="e-h">
+  <div class="wrap">
+    <div class="copy">
+      <span class="kick" style="color:var(--salmon)">Early repayment</span>
+      <h2 class="mega h2" id="e-h">Good week at the stall? Pay ahead.</h2>
+      <p class="lede" style="color:#E9DCD7">Slide to any amount. Fundo shows your new balance and how many payments are left before you send a peso.</p>
+
+      <div class="calc" role="group" aria-label="Early repayment estimate">
+        <div class="top"><label for="eslide">Pay early</label><span style="font-size:13.5px;color:var(--muted)">Salary Loan · ₱38,500 left</span></div>
+        <div class="big" id="e-big">₱10,000</div>
+        <input class="rng" id="eslide" type="range" min="1000" max="38500" step="500" value="10000" aria-describedby="e-note">
+        <div class="qk" id="qk"><button type="button" data-v="5000" aria-pressed="false">₱5,000</button><button type="button" data-v="10000" aria-pressed="true">₱10,000</button><button type="button" data-v="20000" aria-pressed="false">₱20,000</button><button type="button" data-v="38500" aria-pressed="false">In full</button></div>
+        <div class="krow"><span>Balance after</span><b id="e-after">₱28,500.00</b></div>
+        <div class="krow" style="border-bottom:1.5px solid var(--ink)"><span>Monthly payments left</span><b id="e-left">7 of ₱4,250</b></div>
+        <p class="note" id="e-note">Sample Salary Loan. Your co-op sets any early payoff fee or rebate.<sup class="fn"><a href="#fn4">4</a></sup></p>
+      </div>
+    </div>
+    <div class="art">
+      <div class="frame" style="aspect-ratio:4/5"><img src="img/carinderia.webp" alt="A carinderia owner laughs while counting the day's earnings" width="1000" height="1153" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<section class="b-sun band" id="how" aria-labelledby="hw-h">
+  <div class="wrap" style="padding-block:84px">
+    <span class="kick" style="color:var(--coral)">How it works</span>
+    <h2 class="mega h2" id="hw-h" style="margin-top:14px">Set up in one sitting.</h2>
+    <ol class="tl">
+      <li><span class="no">1</span><h3>Register</h3><p>Enter your name, mobile and membership number. Confirm with the 6-digit code we text you, then turn on fingerprint sign-in. Update your personal info any time.</p></li>
+      <li><span class="no">2</span><h3>Link your co-ops</h3><p>Add each membership you hold. Your co-op checks it, then your loans and full payment history appear.</p></li>
+      <li><span class="no">3</span><h3>Track and pay</h3><p>See what's due, pay from your e-wallet or bank, and let reminders do the remembering.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="split b-cream band aright" id="coops" aria-labelledby="co-h">
+  <div class="wrap">
+    <div class="art">
+      <div class="frame"><img src="img/coop.webp" alt="A co-op staff member helps an older member at the counter" width="1100" height="935" loading="lazy"></div>
+      <div class="stamp js-stamp ink sm" style="left:4%;top:7%" aria-hidden="true">Member<b>Verified</b>BMC-004821</div>
+    </div>
+    <div class="copy">
+      <span class="kick" style="color:var(--coral)">For cooperatives</span>
+      <h2 class="mega h2" id="co-h">Run a co-op? Give members their records.</h2>
+      <p class="lede">Fewer balance questions at the counter and fewer missed payments, while your books stay the source of truth.</p>
+      <ul class="clist">
+        <li>Members see the records you share<span>Read-only</span></li>
+        <li>Payments go to your co-op account<span>Direct</span></li>
+        <li>Due-date reminders sent for you<span>Automatic</span></li>
+        <li>Membership checked before linking<span>Verified</span></li>
+      </ul>
+      <a class="btn d" href="#join">Talk to the Fundo team</a>
+    </div>
+  </div>
+</section>
+
+<section class="b-salmon band" id="members" aria-labelledby="mb-h">
+  <div class="wrap" style="padding-block:84px">
+    <span class="kick">Who Fundo is for</span>
+    <h2 class="mega h2" id="mb-h" style="margin-top:14px">Built for members like these.</h2>
+    <p class="mnote">Illustrative member profiles, not customer reviews. Fundo hasn't launched yet.</p>
+    <div class="mgrid">
+      <article class="mc"><div class="ph"><img src="img/hs1.webp" alt="Portrait of a teacher" width="700" height="700" loading="lazy"></div><div class="tx"><span class="who">Teacher · Mandaue</span><h3>Lorna</h3><p>Checks her Salary Loan balance on payday instead of queuing at the co-op office.</p></div><div class="uses">Uses: ledger and pay</div></article>
+      <article class="mc"><div class="ph"><img src="img/hs2.webp" alt="Portrait of a rice farmer" width="700" height="700" loading="lazy"></div><div class="tx"><span class="who">Rice farmer · Bohol</span><h3>Ramon</h3><p>Gets a text three days before his Livelihood Loan is due, even out in the field with no data.</p></div><div class="uses">Uses: SMS alerts</div></article>
+      <article class="mc"><div class="ph"><img src="img/hs3.webp" alt="Portrait of a delivery rider" width="700" height="700" loading="lazy"></div><div class="tx"><span class="who">Delivery rider · Cebu City</span><h3>Jun</h3><p>Pays his Emergency Loan from GCash between deliveries and pays ahead after big tip weeks.</p></div><div class="uses">Uses: pay early</div></article>
+      <article class="mc"><div class="ph"><img src="img/hs4.webp" alt="Portrait of a sari-sari store owner" width="700" height="700" loading="lazy"></div><div class="tx"><span class="who">Store owner · Lapu-Lapu</span><h3>Nena</h3><p>Belongs to two co-ops and sees both loans side by side, with due dates on her calendar.</p></div><div class="uses">Uses: linked co-ops</div></article>
+    </div>
+  </div>
+</section>
+
+<section class="faq b-blush band" id="faq" aria-labelledby="fq-h">
+  <div class="wrap">
+    <div class="faq-side"><span class="kick" style="color:var(--coral)">Questions</span><h2 class="mega h2" id="fq-h" style="margin-top:14px">Good to know.</h2><div class="faq-panel"><p class="faq-note"><b>Your co-op keeps the books.</b> Fundo shows you what they record, and every payment goes straight to them.</p></div></div>
+    <div>
+      <details open><summary>Does Fundo hold my money?</summary><p>No. Fundo shows the records your co-op shares. When you pay, the money goes from your GCash, Maya or bank to your co-op.</p></details>
+      <details><summary>My co-op isn't on Fundo yet. Can I still sign up?</summary><p>Join the list with your mobile number. We'll text you when your co-op connects, and you can tell your co-op you want it.</p></details>
+      <details><summary>Can I link more than one co-op?</summary><p>Yes. Add each membership number. Every co-op confirms its own membership before your records appear.</p></details>
+      <details><summary>What if my phone has no fingerprint sensor?</summary><p>Use a 6-digit passcode instead. You can turn fingerprint sign-in on or off from the Me tab.</p></details>
+      <details><summary>Do SMS alerts need mobile data?</summary><p>No. SMS and MMS reminders arrive as regular text messages, so they reach you even without data.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final band" id="join" aria-labelledby="j-h">
+  <div class="wrap">
+    <div class="copy">
+      <span class="kick">Early access</span>
+      <h2 class="mega" id="j-h">Get Fundo.</h2>
+      <p class="lede">Leave your number and the co-op you belong to. We'll text you when it's ready.</p>
+      <form class="cap" data-form="final">
+        <label for="m2" class="sr">Mobile number</label>
+        <input id="m2" type="tel" inputmode="tel" placeholder="Mobile number" autocomplete="tel">
+        <label for="c2" class="sr">Your co-op</label>
+        <input id="c2" type="text" placeholder="Your co-op (optional)">
+        <button class="btn d" type="submit">Join the early-access list</button>
+      </form>
+      <p class="trust">We'll only text you about the launch. We never share your number.</p>
+      <div class="cap-ok" role="status" data-ok="final"></div>
+    </div>
+    <div style="position:relative">
+      <div class="frame"><img src="img/final.webp" alt="A mother and daughter laugh together at something on a phone" width="1100" height="1115" loading="lazy" style="object-position:50% 40%"></div>
+      <div class="stamp js-stamp" aria-hidden="true">Members<b>Welcome</b>Cebu · 2026</div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot band">
+  <div class="wrap">
+    <div class="fcols">
+      <div><a class="brand" href="#top" style="padding:0;opacity:1"><span class="logo" data-size="40" data-v="dark"></span><b style="color:var(--cream)">fundo</b></a><p style="margin:14px 0 0;font-size:15px;color:#CDBDB8;max-width:22em">Co-op records, in your hands. Built for members of Philippine cooperatives.</p></div>
+      <div><h4>App</h4><a href="#records">Records</a><a href="#pay">Payments</a><a href="#reminders">Reminders</a><a href="#early">Early repayment</a><a href="#offers">Loan products</a></div>
+      <div><h4>More</h4><a href="#how">How it works</a><a href="#coops">For cooperatives</a><a href="#members">Who it's for</a><a href="#faq">FAQ</a><a href="#join">Early access</a></div>
+      <div class="apps"><span>Coming to Android and iPhone</span><span class="badge">Google Play · soon</span><span class="badge">App Store · soon</span></div>
+    </div>
+    <div class="fnotes">
+      <p id="fn1"><sup>1</sup> SMS and MMS reminders depend on your mobile network. You choose the lead time in Reminders.</p>
+      <p id="fn2"><sup>2</sup> Available methods depend on what your co-op accepts. E-wallet and bank fees, if any, are set by those providers.</p>
+      <p id="fn3"><sup>3</sup> Fundo displays records provided by your cooperative. Your cooperative remains the official record keeper.</p>
+      <p id="fn4"><sup>4</sup> Calculator figures are illustrative. Interest, rebates and early payoff fees follow your cooperative's loan policy.</p>
+      <p>Fundo is a concept prototype and has not launched. Photos are AI-generated illustrations. The early-access form on this preview page does not send your number anywhere yet.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+"use strict";
+var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+/* Fundo mark: an F built from three rounded bars, with a coin */
+function logo(size,bg,fg,coin){return '<svg width="'+size+'" height="'+size+'" viewBox="0 0 64 64" role="img" aria-label="Fundo logo" style="display:block"><rect width="64" height="64" rx="19" fill="'+bg+'"/><rect x="19" y="15" width="11" height="36" rx="5.5" fill="'+fg+'"/><rect x="19" y="15" width="28" height="11" rx="5.5" fill="'+fg+'"/><rect x="19" y="31" width="19" height="11" rx="5.5" fill="'+fg+'"/><circle cx="45" cy="46" r="6.5" fill="'+coin+'"/></svg>'}
+$$('.logo').forEach(function(e){var d=e.dataset.v==='dark';e.innerHTML=d?logo(+e.dataset.size,'#FF8A6B','#26191C','#FFF6F1'):logo(+e.dataset.size,'#26191C','#FF8A6B','#FFF6F1')});
+/* tickers */
+$$('.tt').forEach(function(t){var s='<span>'+t.dataset.words.split('|').map(function(w){return w+' <i></i>'}).join(' ')+'</span>';t.innerHTML=s+s});
+/* stamps press in when they enter view (visible at rest; only the press animates) */
+var st=$$('.js-stamp');
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('go');io.unobserve(e.target)}})},{threshold:.6});st.forEach(function(s){io.observe(s)})}
+/* forms: in-page only */
+$$('form[data-form]').forEach(function(f){f.addEventListener('submit',function(ev){ev.preventDefault();
+ var k=f.dataset.form,inp=f.querySelector('input[type=tel]'),num=(inp.value||'').trim(),ok=$('[data-ok="'+k+'"]');
+ if(!/\d{7,}/.test(num.replace(/\D/g,''))){ok.textContent='Enter a mobile number, like 0917 000 0000.';ok.classList.add('on');inp.focus();return}
+ var c=f.querySelector('#c2'),co=c&&c.value.trim()?' for '+c.value.trim():'';
+ ok.textContent='Thanks. '+num+co+' is on the list. (Preview page: nothing was sent.)';ok.classList.add('on')})});
+/* early repayment calculator */
+var BAL=38500,MONTHLY=4250,r=$('#eslide');
+var peso=function(n,d){return '₱'+n.toLocaleString('en-US',{minimumFractionDigits:d?2:0,maximumFractionDigits:d?2:0})};
+function upd(v){v=Math.max(1000,Math.min(BAL,v));r.value=v;var after=BAL-v,left=Math.ceil(after/MONTHLY);
+ $('#e-big').textContent=v>=BAL?'In full':peso(v);
+ $('#e-after').textContent=peso(after,true);
+ $('#e-left').textContent=after<=0?'None, loan closed':left+' of '+peso(MONTHLY);
+ r.style.setProperty('--p',((v-1000)/(BAL-1000)*100)+'%');
+ $$('#qk button').forEach(function(b){b.setAttribute('aria-pressed',String(+b.dataset.v===v))})}
+r.addEventListener('input',function(){upd(+r.value)});
+$('#qk').addEventListener('click',function(e){var b=e.target.closest('button');if(b)upd(+b.dataset.v)});
+upd(10000);
+})();
+</script>
+
+</body></html>
